@@ -1,0 +1,14 @@
+{
+"films": [
+        {
+        "id": "1",
+        "name": "Dodge Durango SRT Hellcat",
+        "horsepower":"710" ,
+        "engine":"6.2-liter V-8",
+        "torque":"645 pound-feet",
+        "gearbox":"8-speed automatic",
+        "cost":"$80,995",
+        "image":"https://editorial.pxcrush.net/carsales/general/editorial/dodge-durango-srt-hellcat-05.jpg?width=1024&height=683"
+        }
+    ]
+}    
