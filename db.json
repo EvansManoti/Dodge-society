@@ -9,6 +9,17 @@
         "gearbox":"8-speed automatic",
         "cost":"$80,995",
         "image":"https://editorial.pxcrush.net/carsales/general/editorial/dodge-durango-srt-hellcat-05.jpg?width=1024&height=683"
-        }
+        },
+
+        {
+            "id": "2",
+            "name":"Ram 1500 TRX",
+            "horsepower":"702",
+            "engine":"Hurricane twin-turbo 3.0-liter",
+            "torque":"650 lb-ft",
+            "gear_box": "8-speed automatic",
+            "cost":"$84,850", 
+            "image":"https://di-uploads-pod32.dealerinspire.com/glenncdjroflouisville/uploads/2021/03/2021-Ram-1500-TRX-Exterior.jpg"
+            }
     ]
 }    
