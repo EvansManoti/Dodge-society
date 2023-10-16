@@ -20,6 +20,17 @@
             "gear_box": "8-speed automatic",
             "cost":"$84,850", 
             "image":"https://di-uploads-pod32.dealerinspire.com/glenncdjroflouisville/uploads/2021/03/2021-Ram-1500-TRX-Exterior.jpg"
-            }
+            },
+        
+            {
+                "id": "3",
+                "name": "Dodge Charger SRT Hellcat Widebody",
+                "horsepower": "807",
+                "engine": "SUPERCHARGED 6.2L HEMI",
+                "torque": "707 pound-feet",
+                "gear_box":"8-speed automatic",
+                "cost":"$77,900",
+                "image":"https://di-uploads-pod46.dealerinspire.com/unioncitycdjrfiat/uploads/2023/05/2023DodgeChargerSRTHellcatwidebody-exterior-01.jpg" 
+                }
     ]
 }    
