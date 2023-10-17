@@ -25,9 +25,11 @@ function pageNumberUpdate() {
     span.innerText = page;
 }
 
-function dispalyDodge(json) {
+function dispalyDodge(data) {
     let divElement = document.getElementById("all-vehicle");
     let dodge =""
+    for(let i = 0; i < json.length; i++){
+        let dodge = data[i];
         console.log(dodge);
         dodge=
         dodge + 
@@ -40,16 +42,16 @@ function dispalyDodge(json) {
         </div>
      </div>
         `
-    
-    divElement.innerHTML = dodge;
+    }
+    divElement.innerHTML = dodge
 }
 
 function getDodge(){
       fetch("http://localhost:3000/dodge",{
         method:'GET',
       })
-        .then(response => response.json ())
-        .then(json =>{
+        .then(response => response.data ())
+        .then(data =>{
             let li = `<tr><th>Name</th><th>Horsepower</th><th>Engine</th><th>Torque</th><th>Gearbox</th><th>Cost</th><th>Image</th></tr>`;
 
             json.forEach(dodge => {
@@ -64,7 +66,7 @@ function getDodge(){
                 </tr>`;
             });
             document.getElementById("dodge")
-            console.log(json)
-            dispalyDodge(json.json);
+            console.log(data)
+            dispalyDodge(data.data);
         });
 }
