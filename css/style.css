@@ -28,3 +28,32 @@
 #search-area span:hover{
     background-color: rgb(229, 36, 36, 0.5);
 }
+
+#all-vehicle{
+    padding: 12px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.a-vehicle{
+    border-radius: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+
+}
+.a-vehicle img{
+    height: 150px;
+    width: auto;
+    display: block;
+}
+
+.a-vehicle div{
+    background-color: orange;
+    color: white;
+    padding: 5px;
+    border-radius: 0px 10px;
+}
+.a-vehicle span{
+    margin-left: 9px;
+    font-size: large;
+    font-weight: bold;
+}
