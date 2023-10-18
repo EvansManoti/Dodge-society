@@ -1,72 +1,91 @@
-let page = 1;
-let paginationElement = document.getElementById("pagination");
-let paginationbtns=paginationElement.getElementsByTagName("button")
-//console.log(paginationbtns)
+const dodgeData = {
+    "dodge": [
+        {
+            "id": "1",
+            "name": "Dodge Durango SRT Hellcat",
+            "horsepower": "710",
+            "engine": "6.2-liter V-8",
+            "torque": "645 pound-feet",
+            "gearbox": "8-speed automatic",
+            "cost": "$80,995",
+            "image": "https://editorial.pxcrush.net/carsales/general/editorial/dodge-durango-srt-hellcat-05.jpg?width=1024&height=683"
+        },
+        {
+            "id": "2",
+            "name": "Ram 1500 TRX",
+            "horsepower": "702",
+            "engine": "Hurricane twin-turbo 3.0-liter",
+            "torque": "650 lb-ft",
+            "gear_box": "8-speed automatic",
+            "cost": "$84,850",
+            "image": "https://di-uploads-pod32.dealerinspire.com/glenncdjroflouisville/uploads/2021/03/2021-Ram-1500-TRX-Exterior.jpg"
+        },
+        {
+            "id": "3",
+            "name": "Dodge Charger SRT Hellcat Widebody",
+            "horsepower": "807",
+            "engine": "SUPERCHARGED 6.2L HEMI",
+            "torque": "707 pound-feet",
+            "gear_box": "8-speed automatic",
+            "cost": "$77,900",
+            "image": "https://di-uploads-pod46.dealerinspire.com/unioncitycdjrfiat/uploads/2023/05/2023DodgeChargerSRTHellcatwidebody-exterior-01.jpg"
+        },
+        {
+            "id": "4",
+            "name": "Dodge Challenger SRT Hellcat",
+            "horsepower": "797",
+            "engine": "Supercharged 6.2L HEMIV8",
+            "torque": "707 pound-feet",
+            "gear_box": "8-speed automatic",
+            "cost": "$70,590",
+            "image": "https://www.autooutlet.cz/wp-content/uploads/2023/09/dsc03015.jpg"
+        }
+    ]
+};
 
-paginationbtns[0].addEventListener('click', reverse);
-function reverse(){
-    console.log("reverse")
-    if (page == 1){
-        return;
-    }
-    page = page -1;
-    pageNumberUpdate();
-}
-paginationbtns[1].addEventListener('click', drive);
-function drive(){
-    console.log("drive")
-    page = page +1;
-    pageNumberUpdate()
-}
+const vehicleList = document.getElementById("dodge-list");
 
-function pageNumberUpdate() {
-    let span = paginationElement.getElementsByTagName("span")[0];
-    //console.log(span);
-    span.innerText = page;
-}
+dodgeData.dodge.forEach(vehicle => {
+    const card = document.createElement("div");
+    card.className = "vehicle-card";
 
-function dispalyDodge(data) {
-    let divElement = document.getElementById("all-vehicle");
-    let dodge =""
-    for(let i = 0; i < json.length; i++){
-        let dodge = data[i];
-        console.log(dodge);
-        dodge=
-        dodge + 
-        `
-        <div class="a-vehicle">
-        <img 
-        src="${dodge.image_url}">
-        <div>
-        <p>Name:<span>${dodge.name}</span></p>
-        </div>
-     </div>
-        `
-    }
-    divElement.innerHTML = dodge
-}
+    const image = document.createElement("img");
+    image.src = vehicle.image;
+    image.alt = vehicle.name;
+    image.className = "vehicle-image";
+    card.appendChild(image);
 
-function getDodge(){
-      fetch("http://localhost:3000/dodge",{
-        method:'GET',
-      })
-        .then(response => response.data ())
-        .then(data =>{
-            let li = `<tr><th>Name</th><th>Horsepower</th><th>Engine</th><th>Torque</th><th>Gearbox</th><th>Cost</th><th>Image</th></tr>`;
+    const details = document.createElement("div");
+    details.className = "vehicle-details";
 
-            json.forEach(dodge => {
-                li += `<tr>
-                    <td>${dodge.name}</td>
-                    <td>${dodge.horsepower}</td>
-                    <td>${dodge.engine}</td>
-                    <td>${dodge.torque}</td>
-                    <td>${dodge.gearbox}</td>
-                    <td>${dodge.cost}</td>
-                    <td>${dodge.image}</td>
-                </tr>`;
-            });
-            document.getElementById("dodge")
-            console.log(data)
-            dispalyDodge(data.data);
-        });
-}
+    const name = document.createElement("p");
+    name.textContent = vehicle.name;
+    name.className = "vehicle-name";
+    details.appendChild(name);
+
+    const horsepower = document.createElement("p");
+    horsepower.textContent = `Horsepower: ${vehicle.horsepower}`;
+    details.appendChild(horsepower);
+
+    const engine = document.createElement("p");
+    engine.textContent = `Engine: ${vehicle.engine}`;
+    details.appendChild(engine);
+
+    const torque = document.createElement("p");
+    torque.textContent = `Torque: ${vehicle.torque}`;
+    details.appendChild(torque);
+
+    const gearbox = document.createElement("p");
+    gearbox.textContent = `Gearbox: ${vehicle.gearbox}`;
+    details.appendChild(gearbox);
+
+    const cost = document.createElement("p");
+    cost.textContent = `Cost: ${vehicle.cost}`;
+    cost.className = "vehicle-cost";
+    details.appendChild(cost);
+
+    card.appendChild(details);
+    vehicleList.appendChild(card);
+});
+
+
